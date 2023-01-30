@@ -205,7 +205,6 @@ body {
 	font-size: 1.5rem;
 	font-weight: 700;
 	text-align: center;
-	background-color: var(--White);
 }
 .attribution a {
 	color: var(--Strong-cyan);
