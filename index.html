@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+		<link rel="stylesheet" href="styes.css" />
+
+		<title>Frontend Mentor | Tip calculator app</title>
+
+		<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+	</head>
+	<body>
+		<section class="container">
+			<img src="./images/logo.svg" class="logo" alt="" />
+
+			<div class="tip-calculator">
+				<section class="tip-sel">
+					<form action="" class="bill-input">
+						<p class="label">Bill</p>
+						<div class="input">
+							<img src="./images/icon-dollar.svg" class="t-img" alt="" />
+							<input type="text" value="2" class="bill" />
+						</div>
+					</form>
+					<div class="select-tip">
+						<p class="label">Select Tip %</p>
+						<div class="tip-pec">
+							<button class="tip-btn fixd">5%</button>
+							<button class="tip-btn fixd">10%</button>
+							<button class="tip-btn fixd">15%</button>
+							<button class="tip-btn fixd">25%</button>
+							<button class="tip-btn fixd">50%</button>
+							<input class="tip-btn cust" value="3" placeholder="Custom" />
+						</div>
+					</div>
+					<form action="" class="people">
+						<p class="label err">
+							Number of People
+							<span class="err-txt">Can't be zero</span>
+						</p>
+						<div class="input">
+							<img src="./images/icon-person.svg" class="t-img" alt="" />
+							<input type="text" value="3" class="err-in people" />
+						</div>
+					</form>
+				</section>
+				<section class="disp-sec">
+					<div class="tip-disp">
+						<section class="disp">
+							<div class="person">
+								<p class="big">
+									Tip Amount <br /><span class="small-f">/ person</span>
+								</p>
+								<p class="tip-per">$<span class="tip-amt-per">0.00</span></p>
+							</div>
+							<div class="total">
+								<p class="big">
+									Total <br /><span class="small-f">/ person</span>
+								</p>
+								<p class="tip-tot">$<span class="tip-amt-tot">0.00</span></p>
+							</div>
+						</section>
+
+						<button class="reset-btn">RESET</button>
+					</div>
+				</section>
+			</div>
+		</section>
+
+		<div class="attribution">
+			Challenge by
+			<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+				>Frontend Mentor</a
+			>. Coded by
+			<a target="_blank" href="https://linktr.ee/didiauche">Didia Uchenna</a>.
+		</div>
+		<script src="app.js"></script>
+	</body>
+</html>
