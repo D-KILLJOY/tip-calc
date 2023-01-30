@@ -12,8 +12,10 @@ money.value;
 let totTip = 0;
 let peopleval = 0;
 
-let totTipD;
-let perTipD;
+let totTipD = "0.00";
+let perTipD = "0.00";
+
+displayTip();
 
 let val;
 
@@ -24,6 +26,7 @@ tipBtn.forEach((i) => {
 		});
 
 		i.classList.add("selctd");
+		cust.value = "";
 
 		val = parseInt(i.value);
 		allCheck();
@@ -46,10 +49,21 @@ cust.addEventListener("keyup", (e) => {
 	allCheck();
 });
 
-peopleN.addEventListener("keyup", (e) => {
-	peopleval = parseInt(peopleN.value);
+cust.addEventListener("click", () => {
+	tipBtn.forEach((i) => {
+		i.classList.remove("selctd");
+	});
+});
 
-	allCheck();
+peopleN.addEventListener("keyup", (e) => {
+	if (e.key === "Backspace") {
+		checkPeople();
+	} else {
+		peopleval = parseInt(peopleN.value);
+
+		allCheck();
+		tipPer(peopleval);
+	}
 });
 
 function tipPer(peopleval) {
@@ -65,7 +79,7 @@ resetBTn.addEventListener("click", () => {
 
 	val = 0;
 	totTip = 0;
-	totTipD = 0;
+	totTipD = "0.00";
 	perTipD = 0;
 
 	tipBtn.forEach((i) => {
@@ -79,7 +93,7 @@ function checkPeople() {
 	let errMsg = document.querySelector(".err-txt");
 	let errInp = document.querySelector(".err-in");
 
-	if (peopleval === 0) {
+	if (peopleval === 0 || peopleN.value === "") {
 		errMsg.classList.add("show-err");
 		errInp.classList.add("zero");
 	} else {
@@ -92,7 +106,7 @@ function allCheck() {
 	tipMoney = parseInt(money.value);
 
 	calculatePecerntage(val, tipMoney);
-	tipPer(peopleval);
+
 	checkPeople();
 }
 
