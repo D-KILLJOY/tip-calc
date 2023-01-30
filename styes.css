@@ -113,10 +113,14 @@ body {
 	background-color: var(--Very-dark-cyan);
 }
 
+.fixd.selctd {
+	background-color: var(--Strong-cyan);
+	color: var(--Very-dark-cyan);
+}
+
 .fixd:hover {
 	background-color: var(--Strong-cyan);
 	color: var(--Very-dark-cyan);
-	font-weight: 700;
 }
 
 .tip-pec .cust {
