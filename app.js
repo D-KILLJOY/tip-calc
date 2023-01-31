@@ -58,6 +58,8 @@ cust.addEventListener("click", () => {
 peopleN.addEventListener("keyup", (e) => {
 	if (e.key === "Backspace") {
 		checkPeople();
+	} else if (peopleN.value === "0") {
+		checkPeople();
 	} else {
 		peopleval = parseInt(peopleN.value);
 
@@ -74,13 +76,13 @@ function tipPer(peopleval) {
 
 resetBTn.addEventListener("click", () => {
 	tipMoney = 0;
-	money.value = 0;
-	peopleN.value = 0;
+	money.value = "";
+	peopleN.value = "";
 
 	val = 0;
 	totTip = 0;
 	totTipD = "0.00";
-	perTipD = 0;
+	perTipD = "0.00";
 
 	tipBtn.forEach((i) => {
 		i.classList.remove("selctd");
@@ -93,7 +95,7 @@ function checkPeople() {
 	let errMsg = document.querySelector(".err-txt");
 	let errInp = document.querySelector(".err-in");
 
-	if (peopleval === 0 || peopleN.value === "") {
+	if (peopleval === 0 || peopleN.value === "" || peopleN.value === "0") {
 		errMsg.classList.add("show-err");
 		errInp.classList.add("zero");
 	} else {
